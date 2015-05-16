@@ -6,17 +6,11 @@
         <div>
             <h1><a href="">Dekovej blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 16.05.2014, 16:14</p>
-            <h2><a href="">Šimej je smiešny</a></h2>
-            <p>Volá sa Soták a je smiešny</p>
-        </div>
-
-        <div>
-            <p>published: 16.05.2014, 16:14</p>
-            <h2><a href="">Libej a Terez sú smiešni tiež!</a></h2>
-            <p>Veľká hlava + malá tvár = smiešnota</p>
-        </div>
-    </body>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
 </html>
